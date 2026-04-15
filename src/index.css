@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.cdnfonts.com/css/digital-7');
+@import url('https://fonts.cdnfonts.com/css/14-segment-led');
+
+@theme {
+  --font-digital: "Digital-7", "Share Tech Mono", monospace;
+  --font-segment-14: "14 Segment LED", "Digital-7", monospace;
+}
+
+@layer base {
+  .lcd-screen {
+    position: relative;
+    border: 2px solid #0a0a0a;
+    overflow: hidden;
+    transition: background-color 0.2s ease;
+  }
+
+  /* No gradients as requested */
+  .lcd-screen::before, .lcd-screen::after {
+    display: none;
+  }
+
+  .lcd-mode-classic .lcd-screen {
+    background: #D8D9D1; /* Light bone/grey LCD background from photo */
+  }
+
+  .lcd-mode-light .lcd-screen {
+    background: #1A2B1F; /* Dark LCD green background */
+  }
+
+  .lcd-mode-classic .lcd-on-segment {
+    color: #000000;
+    fill: #000000;
+  }
+
+  .lcd-mode-classic .lcd-off-segment {
+    color: #000000;
+    fill: #000000;
+    opacity: 0.05; /* Subtle ghosting like real LCD */
+  }
+
+  .lcd-mode-light .lcd-on-segment {
+    color: #8FBF64;
+    fill: #8FBF64;
+    text-shadow: 0 0 5px rgba(143, 191, 100, 0.5);
+  }
+
+  .lcd-mode-light .lcd-off-segment {
+    color: #8FBF64;
+    fill: #8FBF64;
+    opacity: 0.05;
+  }
+  
+  .lcd-mode-classic .lcd-label {
+    color: #000000;
+    opacity: 0.7;
+  }
+
+  .lcd-mode-light .lcd-label {
+    color: #8FBF64;
+    opacity: 0.7;
+  }
+
+  .thin-frame {
+    background: #111;
+    border: 4px solid #222;
+    box-shadow: 
+      0 20px 50px rgba(0,0,0,0.9),
+      inset 0 1px 2px rgba(255,255,255,0.1);
+  }
+
+  .divider-h {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .lcd-mode-light .divider-h {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .divider-v {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .lcd-mode-light .divider-v {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+}

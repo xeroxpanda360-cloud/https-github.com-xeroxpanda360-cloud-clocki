@@ -1,0 +1,5 @@
+{
+  "name": "Stealth AI Clock",
+  "description": "A stealth-oriented clock and AI interface for mobile devices.",
+  "requestFramePermissions": ["microphone"]
+}
